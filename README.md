@@ -268,3 +268,35 @@ Endpoint to request a payment for a user.
   {
     "message": "Payment request submitted successfully"
   }
+# Mass Email Route
+
+## Overview
+
+The Mass Email Route is used to send payment request details via email. It utilizes the Nodemailer library to send emails through a Gmail account. The route accepts the following query parameters: `accountID`, `method`, and `amount` to customize the content of the email.
+
+## Endpoint
+
+- **Endpoint**: `/paymentmail`
+- **Example URL**: `https://server-cashquiz.vercel.app/paymentmail?accountID=asfafaiu896432986428&method=Google%20Play&amount=1000`
+
+## Request
+
+- **HTTP Method**: POST
+- **Headers**: `Content-Type: application/json`
+
+## Query Parameters
+
+- `accountID` (string): The account ID for the payment request.
+- `method` (string): The payment method used.
+- `amount` (string): The payment amount.
+
+## Response
+
+- **Status Code**: 200 (OK) if the email was sent successfully, 500 (Internal Server Error) in case of an error.
+- **Response Body**: A JSON response with a message indicating the status of the email sending process.
+
+## Request Example
+
+```http
+POST https://server-cashquiz.vercel.app/paymentmail?accountID=asfafaiu896432986428&method=Google%20Play&amount=1000
+Content-Type: application/json
