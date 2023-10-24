@@ -13,6 +13,7 @@ const updatePoints = require("./routes/updatePoints");
 const quizplayed = require("./routes/quizplayed");
 const updatepayment= require("./routes/updatepaymentstatus");
 const contactmail= require("./routes/contactmail");
+const paymentmail= require("./routes/paymentmail");
 const supportMessage = require("./routes/supportmessage")
 
 
@@ -29,6 +30,7 @@ app.use("/updatepoints", updatePoints);
 app.use("/quizplayed", quizplayed);
 app.use("/updatepaymentstatus", updatepayment);
 app.use("/contactmail", contactmail);
+app.use("/paymentmail", paymentmail);
 app.use("/supportmessage", supportMessage);
 
 
