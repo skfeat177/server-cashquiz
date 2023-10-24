@@ -16,11 +16,20 @@ router.post("/", async (req, res) => {
                 pass: "rhbkmirwcpsurtdg",
             },
         });
-
+        const now = new Date();
+        const formattedDate = now.toLocaleDateString('en-GB', {
+            day: '2-digit',
+            month: '2-digit',
+            year: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false,
+        }).replace(/\//g, '-');
+      
         const mailOptions = {
             from: '"Cash Quiz"<teamcashquiz@gmail.com>',
             to: "contactcashquiz@gmail.com", 
-            subject: "Payment Request",
+     subject: `${formattedDate} - Payment Request`,
             html: `<!DOCTYPE html>
             <html lang="en">
             <head>
